@@ -15,10 +15,11 @@ public class PilhasEFilasPUCPR {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //System.out.println("Entre com a expressão a ser testada!");
-        //String a = s.next();
-        //if(Expressão.validate(a))System.out.println("Expressão valida!");
-        //else System.out.println("Expressão invalida!");
+        /*
+        System.out.println("Entre com a expressão a ser testada!");
+        String a = s.next();
+        if(Expressão.validate(a))System.out.println("Expressão valida!");
+        else System.out.println("Expressão invalida!");
         Fila a = Fila.inicializa(10);
         Fila b = Fila.inicializa(7);
         a.insere(12);
@@ -46,5 +47,21 @@ public class PilhasEFilasPUCPR {
         System.out.println("Filas originais após o merge:");
         a.imprime();
         b.imprime();
+        */
+        ListaEncadeada l1 = new ListaEncadeada(null);
+        l1.addFirst(13);
+        l1.addAfter(l1.getNodeByInfo(13),35);
+        l1.addAfter(l1.getNodeByInfo(13),20);
+        l1.addAfter(l1.getNodeByInfo(20),29);
+        l1.addLast(40);
+        l1.addFirst(5);
+        l1.addOrdered(4);
+        l1.addOrdered(41);
+        l1.addOrdered(31);
+        l1.print();
+        l1.removeFirst();
+        l1.removeLast();
+        l1.remove(l1.getNodeByInfo(29));
+        l1.print();
     }
 }
