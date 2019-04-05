@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pilhas.e.filas.pucpr;
+package cspspucpr;
 
 /**
  *
@@ -34,6 +34,10 @@ public class ListaEncadeada {
         node.SetNext(new Node(Info,node.getNext()));
     }
     public void addLast(int Info){
+        if(this.isEmpty()){
+            this.First = new Node(Info,null);
+            return;
+        }
         Node node=this.First;
         while(node.getNext()!=null)node = node.getNext();
         node.SetNext(new Node(Info,null));
@@ -68,7 +72,8 @@ public class ListaEncadeada {
             }
             System.out.println(']');
         }catch(NullPointerException e){
-            System.out.println("A lista está vazia!");
+            System.out.print("A lista está vazia!");
+            System.out.println(']');
         }
     }
     public Node removeFirst(){
@@ -92,4 +97,9 @@ public class ListaEncadeada {
         node.SetNext(removedNode.getNext());
         return removedNode;
     }
+
+    public Node getFirst() {
+        return First;
+    }
+    
 }
