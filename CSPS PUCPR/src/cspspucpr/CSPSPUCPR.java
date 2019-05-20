@@ -13,9 +13,8 @@ import java.util.Scanner;
 public class CSPSPUCPR {
     static Scanner s = new Scanner(System.in);
     public static void main(String[] args) {
-        System.out.println("Testing stack:");
+        System.out.println("Testando Pilha:");
         Pilha_Composta pc = new Pilha_Composta();
-       
         pc.mostra_pilha();
         pc.empilha(3);
         pc.empilha(4);
@@ -32,7 +31,7 @@ public class CSPSPUCPR {
         pc.empilha(7);
         pc.empilha(8);
         pc.mostra_pilha();
-        System.out.println("Testing queue:");
+        System.out.println("Testando Fila:");
         Fila_Composta fc = new Fila_Composta();
         fc.mostra_fila();
         fc.insere(3);
