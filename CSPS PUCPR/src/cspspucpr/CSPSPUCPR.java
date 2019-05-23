@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package cspspucpr;
+import static cspspucpr.ArvoreBinariaBalanceada.altura;
 import java.util.Scanner;
 
 /**
@@ -13,41 +14,39 @@ import java.util.Scanner;
 public class CSPSPUCPR {
     static Scanner s = new Scanner(System.in);
     public static void main(String[] args) {
-        System.out.println("Testando Pilha:");
-        Pilha_Composta pc = new Pilha_Composta();
-        pc.mostra_pilha();
-        pc.empilha(3);
-        pc.empilha(4);
-        pc.empilha(5);
-        pc.empilha(6);
-        pc.empilha(7);
-        pc.empilha(8);
-        pc.mostra_pilha();
-        System.out.println(pc.desempilha());
-        System.out.println(pc.desempilha());
-        System.out.println(pc.desempilha());
-        pc.mostra_pilha();
-        pc.empilha(6);
-        pc.empilha(7);
-        pc.empilha(8);
-        pc.mostra_pilha();
-        System.out.println("Testando Fila:");
-        Fila_Composta fc = new Fila_Composta();
-        fc.mostra_fila();
-        fc.insere(3);
-        fc.insere(4);
-        fc.insere(5);
-        fc.insere(6);
-        fc.insere(7);
-        fc.insere(8);
-        fc.mostra_fila();
-        System.out.println(fc.remove());
-        System.out.println(fc.remove());
-        System.out.println(fc.remove());
-        fc.mostra_fila();
-        fc.insere(6);
-        fc.insere(7);
-        fc.insere(8);
-        fc.mostra_fila();
+        ArvoreBinariaBalanceada abb = new ArvoreBinariaBalanceada();
+        abb.insere(1);
+        abb.insere(2);
+        abb.insere(3);
+        abb.insere(4);
+        abb.insere(5);
+        abb.insere(6);
+        abb.insere(7);
+        abb.insere(8);
+        abb.insere(9);
+        abb.insere(10);
+        abb.insere(11); 
+        //arvore balanceada gerada
+        abb.preIterator(abb.getRaiz());
+        System.out.println("");
+        //iterando em modo pré-ordem para melhor vizualização
+        abb.inIterator(abb.getRaiz());
+        System.out.println("");
+        //iterando em modo in-ordem para ver a ordem crescente 
+        abb.posIterator(abb.getRaiz());
+        System.out.println("");
+        //iterando em pos-ordem.
+        abb.remove(8);
+        /* Removendo o nó interno com informação 8; 
+         * o nó que deverá substituir deve ser o com informação 7
+         * e o nó direito deve ser o 10, e o esquerdo o 6;
+         */
+        abb.preIterator(abb.getRaiz());
+        System.out.println("");
+        //iterando em modo pré-ordem para melhor vizualização das operações
+        System.out.println("Existe um nó com o elemento 8:"+abb.existe(8));
+        //mostrando que o 8 foi removido
+        System.out.println("Altura: "+altura(abb.getRaiz()));
+        //imprimindo a altura total da arvore
     }   
 }

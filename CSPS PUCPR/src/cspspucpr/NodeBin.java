@@ -5,6 +5,8 @@
  */
 package cspspucpr;
 
+import static cspspucpr.ArvoreBinariaBalanceada.altura;
+
 /**
  *
  * @author wilsonmielke
@@ -42,4 +44,26 @@ public class NodeBin {
         this.direita = direita;
     }
     
+    public boolean temDir(){
+        return this.getDireita() != null;
+    }
+    
+    public boolean temEsq(){
+        return this.getEsquerda() != null;
+    }
+    
+    public void print(){
+        System.out.println("info:"+this.getInfo());
+        if(this.temEsq()){
+            System.out.println("info Esquerda:"+this.getEsquerda().getInfo());
+        }
+        if(this.temDir()){
+            System.out.println("info Direita:"+this.getDireita().getInfo());
+        }
+        System.out.println("Balanceamento:"+this.avl());
+    }
+    
+    public int avl(){
+        return altura(this.getEsquerda()) - altura(this.getDireita());
+    }
 }
