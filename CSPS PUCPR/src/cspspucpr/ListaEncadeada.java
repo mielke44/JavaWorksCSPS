@@ -24,6 +24,16 @@ public class ListaEncadeada {
             return null;
         }
     }
+    
+    public boolean exists(int key){
+        Node node=this.First;
+        while(node!=null){
+            if(node.getInfo()==key)return true;
+            node=node.getNext();
+        }
+        return false;
+    }
+    
     public boolean isEmpty(){
         return this.First==null;
     }

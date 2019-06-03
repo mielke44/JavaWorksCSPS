@@ -14,39 +14,17 @@ import java.util.Scanner;
 public class CSPSPUCPR {
     static Scanner s = new Scanner(System.in);
     public static void main(String[] args) {
-        ArvoreBinariaBalanceada abb = new ArvoreBinariaBalanceada();
-        abb.insere(1);
-        abb.insere(2);
-        abb.insere(3);
-        abb.insere(4);
-        abb.insere(5);
-        abb.insere(6);
-        abb.insere(7);
-        abb.insere(8);
-        abb.insere(9);
-        abb.insere(10);
-        abb.insere(11); 
-        //arvore balanceada gerada
-        abb.preIterator(abb.getRaiz());
-        System.out.println("");
-        //iterando em modo pré-ordem para melhor vizualização
-        abb.inIterator(abb.getRaiz());
-        System.out.println("");
-        //iterando em modo in-ordem para ver a ordem crescente 
-        abb.posIterator(abb.getRaiz());
-        System.out.println("");
-        //iterando em pos-ordem.
-        abb.remove(8);
-        /* Removendo o nó interno com informação 8; 
-         * o nó que deverá substituir deve ser o com informação 7
-         * e o nó direito deve ser o 10, e o esquerdo o 6;
-         */
-        abb.preIterator(abb.getRaiz());
-        System.out.println("");
-        //iterando em modo pré-ordem para melhor vizualização das operações
-        System.out.println("Existe um nó com o elemento 8:"+abb.existe(8));
-        //mostrando que o 8 foi removido
-        System.out.println("Altura: "+altura(abb.getRaiz()));
-        //imprimindo a altura total da arvore
+        System.out.print("Entre com o tamanho da tabela Hash: ");
+        TabelaHash tab1 = new TabelaHash(s.nextInt());
+        tab1.randPop();
+        tab1.print();
+        System.out.print("Entre com o valor a ser buscado na tabela Hash: ");
+        int o = s.nextInt();
+        while(o!=-1){
+            if(tab1.busca(o))System.out.println("O valor: "+o+" existe na tabela de Hash!");
+            else System.out.println("O valor: "+o+" não existe na tabela de Hash!");
+            System.out.print("Entre com o valor a ser buscado na tabela Hash: ");
+            o = s.nextInt();
+        }
     }   
 }
